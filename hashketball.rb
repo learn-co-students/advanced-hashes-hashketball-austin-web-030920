@@ -131,7 +131,7 @@ def access_top(whatever)
     most_whatever
 end
 
-def access_player_with_most(whatever)
+def access_player_with_top(whatever)
     game_hash.each do |key, team|
         team.each do |category, info|
             if category == :players
@@ -299,7 +299,7 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
-    access_player_with_most(:steals) == player_with_longest_name
+    access_player_with_top(:steals) == player_with_longest_name
 end
 
 
