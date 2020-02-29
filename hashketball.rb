@@ -53,7 +53,26 @@ def num_points_scored (name)
   end
 end
 
-
+def shoe_size (name)
+   game_hash.each do |team, team_info| 
+    # team #=> home/away #team_info #=> all the team stats
+    
+    team_info.each do |team, stats|
+      #team #=> [[:team_name, :colors, :players], [:team_name, :colors, :players]]
+     
+      if team == :players
+         # team = :players
+         
+         stats.each do |shoe| 
+      
+           if shoe[:player_name] == name
+             return shoe[:shoe]
+           end
+         end  
+      end
+    end
+  end
+end
 
 
 # rspec spec/hashketball_spec.rb -e game_hash
