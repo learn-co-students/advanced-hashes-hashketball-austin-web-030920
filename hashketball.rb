@@ -117,6 +117,48 @@ def player_numbers(team_n)
   array
 end
 
+def player_stats(p_name)
+  stats = {}
+  game_hash.each do |place, team|
+    team.each do |key, value|
+    if key == :players
+      value.each do |player|
+        # binding.pry
+      if player[:player_name] == p_name
+        # binding.pry
+          stats = {
+            number: player[:number], 
+            shoe: player[:shoe], 
+            points: player[:points],
+            rebounds: player[:rebounds], 
+            assists: player[:assists], 
+            steals: player[:steals], 
+            blocks: player[:blocks], 
+            slam_dunks: player[:slam_dunks]}
+         end
+        end
+      end
+    end
+  end
+  stats
+end
+
+
+def big_shoe_rebounds 
+  big = 0
+  rebound = 0 
+  game_hash.each do |place, team|
+    team[:players].each do |player|
+      if player[:shoe] > big 
+        big = player[:shoe]
+        rebound = player[:rebounds]
+      end
+    end
+  end
+  return rebound
+end
+
+
 
 
 # rspec spec/hashketball_spec.rb -e game_hash
