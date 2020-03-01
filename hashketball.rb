@@ -158,7 +158,19 @@ def big_shoe_rebounds
   return rebound
 end
 
-
+def most_points_scored
+pnts = 0
+guy = ""
+  game_hash.each do |place, team|
+    team[:players].each do |player|
+      if player[:points] > pnts
+        pnts = player[:points]
+        guy = player[:player_name]
+      end
+    end
+  end
+  return guy
+end
 
 
 # rspec spec/hashketball_spec.rb -e game_hash
