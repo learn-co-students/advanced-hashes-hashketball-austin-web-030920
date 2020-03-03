@@ -89,201 +89,201 @@ describe 'hashketball' do
 
   end
 
-  describe '#player_stats' do
+#   describe '#player_stats' do
 
-    let(:jeff_stats) {
-      {
-        :number => 4,
-        :shoe => 18,
-        :points => 10,
-        :rebounds => 1,
-        :assists => 1,
-        :steals => 2,
-        :blocks => 7,
-        :slam_dunks => 2
-      }
-    }
+#     let(:jeff_stats) {
+#       {
+#         :number => 4,
+#         :shoe => 18,
+#         :points => 10,
+#         :rebounds => 1,
+#         :assists => 1,
+#         :steals => 2,
+#         :blocks => 7,
+#         :slam_dunks => 2
+#       }
+#     }
 
-    let(:bismak_stats) {
-      {
-        :number => 0,
-        :shoe => 16,
-        :points => 12,
-        :rebounds => 4,
-        :assists => 7,
-        :steals => 22,
-        :blocks => 15,
-        :slam_dunks => 10
-      }
-    }
+#     let(:bismak_stats) {
+#       {
+#         :number => 0,
+#         :shoe => 16,
+#         :points => 12,
+#         :rebounds => 4,
+#         :assists => 7,
+#         :steals => 22,
+#         :blocks => 15,
+#         :slam_dunks => 10
+#       }
+#     }
 
-    let(:desagna_stats) {
-      {
-        :number => 2,
-        :shoe => 14,
-        :points => 24,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 4,
-        :blocks => 5,
-        :slam_dunks => 5
-      }
-    }
+#     let(:desagna_stats) {
+#       {
+#         :number => 2,
+#         :shoe => 14,
+#         :points => 24,
+#         :rebounds => 12,
+#         :assists => 12,
+#         :steals => 4,
+#         :blocks => 5,
+#         :slam_dunks => 5
+#       }
+#     }
 
-    let(:ben_stats) {
-      {
-        :number => 8,
-        :shoe => 15,
-        :points => 33,
-        :rebounds => 3,
-        :assists => 2,
-        :steals => 1,
-        :blocks => 1,
-        :slam_dunks => 0
-       }
-    }
+#     let(:ben_stats) {
+#       {
+#         :number => 8,
+#         :shoe => 15,
+#         :points => 33,
+#         :rebounds => 3,
+#         :assists => 2,
+#         :steals => 1,
+#         :blocks => 1,
+#         :slam_dunks => 0
+#       }
+#     }
 
-    let(:kemba_stats) {
-      {
-        :number => 33,
-        :shoe => 15,
-        :points => 6,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 7,
-        :blocks => 5,
-        :slam_dunks => 12
-      }
-    }
+#     let(:kemba_stats) {
+#       {
+#         :number => 33,
+#         :shoe => 15,
+#         :points => 6,
+#         :rebounds => 12,
+#         :assists => 12,
+#         :steals => 7,
+#         :blocks => 5,
+#         :slam_dunks => 12
+#       }
+#     }
 
-    let(:alan_stats) {
-      {
-        :number => 0,
-        :shoe => 16,
-        :points => 22,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 3,
-        :blocks => 1,
-        :slam_dunks => 1
-      }
-    }
+#     let(:alan_stats) {
+#       {
+#         :number => 0,
+#         :shoe => 16,
+#         :points => 22,
+#         :rebounds => 12,
+#         :assists => 12,
+#         :steals => 3,
+#         :blocks => 1,
+#         :slam_dunks => 1
+#       }
+#     }
 
-    let(:reggie_stats) {
-      {
-        :number => 30,
-        :shoe => 14,
-        :points => 12,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 12,
-        :blocks => 12,
-        :slam_dunks => 7
-      }
-    }
+#     let(:reggie_stats) {
+#       {
+#         :number => 30,
+#         :shoe => 14,
+#         :points => 12,
+#         :rebounds => 12,
+#         :assists => 12,
+#         :steals => 12,
+#         :blocks => 12,
+#         :slam_dunks => 7
+#       }
+#     }
 
-    let(:brook_stats) {
-      {
-        :number => 11,
-        :shoe => 17,
-        :points => 17,
-        :rebounds => 19,
-        :assists => 10,
-        :steals => 3,
-        :blocks => 1,
-        :slam_dunks => 15
-      }
-    }
+#     let(:brook_stats) {
+#       {
+#         :number => 11,
+#         :shoe => 17,
+#         :points => 17,
+#         :rebounds => 19,
+#         :assists => 10,
+#         :steals => 3,
+#         :blocks => 1,
+#         :slam_dunks => 15
+#       }
+#     }
 
-    let(:mason_stats) {
-      {
-        :number => 1,
-        :shoe => 19,
-        :points => 26,
-        :rebounds => 11,
-        :assists => 6,
-        :steals => 3,
-        :blocks => 8,
-        :slam_dunks => 5
-      }
-    }
+#     let(:mason_stats) {
+#       {
+#         :number => 1,
+#         :shoe => 19,
+#         :points => 26,
+#         :rebounds => 11,
+#         :assists => 6,
+#         :steals => 3,
+#         :blocks => 8,
+#         :slam_dunks => 5
+#       }
+#     }
 
-    let(:jason_stats) {
-      {
-        :number => 31,
-        :shoe => 15,
-        :points => 19,
-        :rebounds => 2,
-        :assists => 2,
-        :steals => 4,
-        :blocks => 11,
-        :slam_dunks => 1
-      }
-    }
+#     let(:jason_stats) {
+#       {
+#         :number => 31,
+#         :shoe => 15,
+#         :points => 19,
+#         :rebounds => 2,
+#         :assists => 2,
+#         :steals => 4,
+#         :blocks => 11,
+#         :slam_dunks => 1
+#       }
+#     }
 
-    it 'returns all stats for a given player' do
-      expect(player_stats("Jeff Adrien")).to eq(jeff_stats)
-      expect(player_stats("Bismack Biyombo")).to eq(bismak_stats)
-      expect(player_stats("DeSagna Diop")).to eq(desagna_stats)
-      expect(player_stats("Ben Gordon")).to eq(ben_stats)
-      expect(player_stats("Kemba Walker")).to eq(kemba_stats)
-      expect(player_stats("Alan Anderson")).to eq(alan_stats)
-      expect(player_stats("Reggie Evans")).to eq(reggie_stats)
-      expect(player_stats("Brook Lopez")).to eq(brook_stats)
-      expect(player_stats("Mason Plumlee")).to eq(mason_stats)
-      expect(player_stats("Jason Terry")).to eq(jason_stats)
-    end
+#     it 'returns all stats for a given player' do
+#       expect(player_stats("Jeff Adrien")).to eq(jeff_stats)
+#       expect(player_stats("Bismack Biyombo")).to eq(bismak_stats)
+#       expect(player_stats("DeSagna Diop")).to eq(desagna_stats)
+#       expect(player_stats("Ben Gordon")).to eq(ben_stats)
+#       expect(player_stats("Kemba Walker")).to eq(kemba_stats)
+#       expect(player_stats("Alan Anderson")).to eq(alan_stats)
+#       expect(player_stats("Reggie Evans")).to eq(reggie_stats)
+#       expect(player_stats("Brook Lopez")).to eq(brook_stats)
+#       expect(player_stats("Mason Plumlee")).to eq(mason_stats)
+#       expect(player_stats("Jason Terry")).to eq(jason_stats)
+#     end
 
-  end
+#   end
 
-  describe '#big_shoe_rebounds' do
+#   describe '#big_shoe_rebounds' do
 
-    it 'returns the number of rebounds of the player with the biggest shoe size' do
-      expect(big_shoe_rebounds).to eq(11)
-    end
+#     it 'returns the number of rebounds of the player with the biggest shoe size' do
+#       expect(big_shoe_rebounds).to eq(11)
+#     end
 
-  end
+#   end
 
-end
+# end
 
-# If you'd like to work on the bonus, uncomment these tests.
+# # If you'd like to work on the bonus, uncomment these tests.
 
-describe 'bonus' do
+# describe 'bonus' do
 
-  describe '#most_points_scored' do
+#   describe '#most_points_scored' do
 
-    it 'returns Ben Gordon' do
-      expect(most_points_scored).to eq("Ben Gordon")
-    end
+#     it 'returns Ben Gordon' do
+#       expect(most_points_scored).to eq("Ben Gordon")
+#     end
 
-  end
+#   end
 
-  describe '#winning_team' do
+#   describe '#winning_team' do
 
-    it 'returns the Brooklyn Nets' do
-      expect(winning_team).to eq("Brooklyn Nets")
-    end
+#     it 'returns the Brooklyn Nets' do
+#       expect(winning_team).to eq("Brooklyn Nets")
+#     end
 
-  end
+#   end
 
-  describe '#player_with_longest_name' do
+#   describe '#player_with_longest_name' do
 
-    it 'returns Bismack Biyombo' do
-      expect(player_with_longest_name).to eq("Bismack Biyombo")
-    end
+#     it 'returns Bismack Biyombo' do
+#       expect(player_with_longest_name).to eq("Bismack Biyombo")
+#     end
 
-  end
+#   end
 
-end
+# end
 
-describe 'super bonus' do
+# describe 'super bonus' do
 
-  describe '#long_name_steals_a_ton?' do
+#   describe '#long_name_steals_a_ton?' do
 
-    it 'returns true' do
-      expect(long_name_steals_a_ton?).to eq(true)
-    end
+#     it 'returns true' do
+#       expect(long_name_steals_a_ton?).to eq(true)
+#     end
 
-  end
+  # end
 
 end
