@@ -121,12 +121,12 @@ def player_with_longest_name
   sorted[-1][:player_name]
 end
 
-def long_name_steals_a_ton
+def long_name_steals_a_ton?
   longest_name = player_with_longest_name
   players = all_players($teams)
   sorted_by_steals = players.sort_by { |player| player[:steals] }
 
-  sorted_by_steals[-1][:player_name] === longest_name
+  sorted_by_steals[-1][:player_name] == longest_name
 end
 # team
 # {
