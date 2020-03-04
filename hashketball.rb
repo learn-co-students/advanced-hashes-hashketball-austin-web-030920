@@ -1,6 +1,14 @@
 require 'csv'
 require_relative 'hashketball_helpers'
 
+# Instead of demonstrating competency of nested data structures by writing out
+# a hash from scratch, I converted the players data table to a csv and use that
+# data to generate the hash programatically.
+#
+# I use .each(), .map(), and .reduce() as well as .sort_by to simplify loops and
+# finding data in the hash.
+#
+
 # generate the team hash first
 home_csv_data = CSV.parse(File.read("home_player_data.csv", headers: true, header_converters: :symbol))
 away_csv_data = CSV.parse(File.read("away_player_data.csv", headers: true, header_converters: :symbol))
@@ -12,6 +20,7 @@ $teams = {
   :away   => build_team("Charlotte Hornets", ["Turquoise", "Purple"], away_csv_data)
 }
 
+
 def game_hash
   $teams
 end
@@ -22,20 +31,20 @@ def all_players(teams)
 end
 
 def find_player_by_name(player_name)
+  # get array of all players
   players = all_players($teams)
-  index = 0
-  while index < players.count do
-    player = players[index]
+  # iterate players array until player is found
+  players.each do |player|
     if player[:player_name] == player_name
       return player
-    else
-      index += 1
     end
   end
 end
 
 def find_team_by_name(team_name)
-
+  $teams.each do |team_key, team|
+    return team if team[:team_name] == team_name
+  end
 end
 
 def num_points_scored(player_name)
@@ -82,9 +91,12 @@ end
 
 def player_stats(player_name)
   player = find_player_by_name(player_name)
-  # player.delete(:player_name)
+
+  # create new hash to preserve origional team hash
   player_stats = {}.merge(player)
+  # mutate new hash by removing :player_name
   player_stats.delete(:player_name)
+  #return new hash
   player_stats
 end
 
@@ -106,10 +118,14 @@ def winning_team
   teams = $teams
   scores = []
   teams.each do |team_key,team|
+    # add up player points for each team
     sum_result = team[:players].reduce(0) { |sum, player| sum += player[:points] }
     scores << { :team_name => team[:team_name], :score => sum_result }
   end
 
+  # sort array by score so largest is at the end
+  # a simple comparison could be done between the two
+  # team's scores but this method accepts more than 2 teams
   sorted = scores.sort_by { |player| player[:score]}
   sorted[-1][:team_name]
 end
@@ -128,22 +144,3 @@ def long_name_steals_a_ton?
 
   sorted_by_steals[-1][:player_name] == longest_name
 end
-# team
-# {
-#   :team_name  => "", #=> String
-#   :colors     => [""],
-#   :players    => []
-# }
-
-# player
-# {
-#   :player_name  => "" #=> String
-#   :number => 0, #=> Int
-#   :shoe => 0, #=> Int
-#   :points => 0, #=> Int
-#   :rebounds => 0, #=> Int
-#   :assists  => 0, #=> Int
-#   :steals => 0, #=> Int
-#   :blocks => 0, #=> Int
-#   :slam_dunks => 0 #=> Int
-# }
